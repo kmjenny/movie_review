@@ -10,7 +10,7 @@ class Movie(models.Model):
 
 class Review(models.Model):
     user = models.CharField(max_length=12)
-    name = models.CharField(max_length=50)
+    name = models.ForeignKey(Movie, on_delete=models.CASCADE)
     comment = models.TextField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
